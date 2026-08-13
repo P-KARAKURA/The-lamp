@@ -16,8 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.querySelector('header nav');
 
+    console.log('Menu Toggle:', menuToggle);
+    console.log('Nav Menu:', navMenu);
+  const navmenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+    
+        // make nav-menu visible when menuToggle is clicked turigukora show and hide 
+        if (navMenu.classList.contains('active')) {
+            navMenu.style.visibility = 'visible';
+            navMenu.style.opacity = '1';
+        } else {
+            navMenu.style.visibility = 'hidden';
+            navMenu.style.opacity = '0';
+        }
+
+
+    });
+
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
+            console.log('Menu toggle clicked');
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
