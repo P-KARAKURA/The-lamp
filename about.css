@@ -1,0 +1,1135 @@
+/* ==========================================
+   LAMPSTAND — ABOUT PAGE
+   ========================================== */
+
+
+/* ==========================================
+   1. RESET & ROOT
+   ========================================== */
+
+:root {
+    --green: #1b5e20;
+    --gold: #d4af37;
+    --dark: #102218;
+    --ink: #111111;
+    --text: #555555;
+    --light: #f7f7f5;
+    --white: #ffffff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Archivo', Arial, Helvetica, sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    overflow-x: hidden;
+
+    line-height: 1.7;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Fraunces', Georgia, serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+========================================== */
+
+.about-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+
+    background: rgba(16, 34, 24, 0.92);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+
+    transition: 0.4s ease;
+}
+
+
+/* ==========================================
+   LAMPSTAND LOGO
+========================================== */
+
+.about-logo {
+    flex-shrink: 0;
+
+    font-family: 'Fraunces', Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    transition: 0.3s ease;
+}
+
+
+.about-logo span {
+    color: var(--gold);
+}
+
+
+.about-logo:hover {
+    transform: scale(1.03);
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.about-nav {
+    margin-left: auto;
+}
+
+
+.about-nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+
+.about-nav ul li a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+
+/* Gold underline */
+
+.about-nav ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: 0.3s ease;
+}
+
+
+.about-nav ul li a:hover {
+    color: var(--gold);
+}
+
+
+.about-nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Active page */
+
+.about-nav ul li a.active {
+    color: var(--gold);
+}
+
+
+.about-nav ul li a.active::after {
+    width: 100%;
+}
+
+
+/* ==========================================
+   SCROLLED HEADER
+========================================== */
+
+.about-header.scrolled {
+    height: 64px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.about-header.scrolled .about-logo {
+    color: var(--green);
+}
+
+
+.about-header.scrolled .about-nav ul li a {
+    color: #222;
+}
+
+
+.about-header.scrolled .about-nav ul li a:hover,
+.about-header.scrolled .about-nav ul li a.active {
+    color: var(--green);
+}
+
+
+.about-header.scrolled .about-nav ul li a::after {
+    background: var(--gold);
+}
+
+
+/* ==========================================
+   MOBILE MENU BUTTON
+========================================== */
+
+.about-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.about-menu-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background: white;
+
+    transition: 0.3s ease;
+}
+
+
+.about-header.scrolled .about-menu-toggle span {
+    background: var(--green);
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+@media (max-width: 950px) {
+
+    .about-header {
+        padding: 0 30px;
+    }
+
+
+    .about-logo {
+        font-size: 27px;
+    }
+
+
+    .about-menu-toggle {
+        display: flex;
+    }
+
+
+    .about-nav {
+        position: absolute;
+
+        top: 100%;
+
+        right: 30px;
+
+        width: 250px;
+
+        padding: 25px 20px;
+
+        background: white;
+
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: 0.3s ease;
+    }
+
+
+    .about-nav ul {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .about-nav ul li {
+        width: 100%;
+    }
+
+
+    .about-nav ul li a {
+        display: block;
+
+        color: #222;
+
+        width: 100%;
+    }
+
+
+    .about-header.menu-open .about-nav {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+/* ==========================================
+   BACK HOME — BOTTOM OF PAGE
+========================================== */
+
+.about-back-home {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    padding: 12px 25px;
+
+    border: 2px solid var(--green);
+
+    border-radius: 30px;
+
+    color: var(--green);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.about-back-home:hover {
+    background: var(--green);
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .about-header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    .about-logo {
+        font-size: 24px;
+    }
+
+
+    .about-nav {
+        right: 20px;
+
+        width: 220px;
+    }
+
+}
+
+/* ==========================================
+   3. HERO
+   ========================================== */
+
+.about-hero {
+    min-height: 620px;
+
+    padding: 160px 8% 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(16, 34, 24, 0.82),
+            rgba(16, 34, 24, 0.94)
+        ),
+        url("images/about.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+.about-hero-content {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+.section-tag,
+.section-label {
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.about-hero h1 {
+    font-size: 58px;
+
+    line-height: 1.15;
+
+    margin: 20px 0 25px;
+
+    color: white;
+}
+
+
+.about-hero h1 span {
+    display: block;
+
+    color: var(--gold);
+}
+
+
+.about-hero p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #d8ded9;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   4. COMMON CONTAINER
+   ========================================== */
+
+.about-container {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   5. INTRODUCTION
+   ========================================== */
+
+.about-introduction {
+    padding: 110px 8%;
+
+    background: white;
+
+    text-align: center;
+}
+
+
+.about-introduction .about-container {
+    max-width: 850px;
+}
+
+
+.about-introduction h2 {
+    color: var(--green);
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 28px;
+}
+
+
+.about-introduction p {
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   6. AFRICAN CONTEXT
+   ========================================== */
+
+.about-context {
+    padding: 110px 8%;
+
+    background: var(--light);
+}
+
+
+.context-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.context-image {
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+.context-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.context-image:hover img {
+    transform: scale(1.04);
+}
+
+
+.context-content h2 {
+    color: var(--green);
+
+    font-size: 40px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 25px;
+}
+
+
+.context-content p {
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   7. LAMPSTAND IDEA
+   ========================================== */
+
+.lampstand-idea {
+    padding: 110px 8%;
+
+    background: white;
+}
+
+
+.idea-content {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.idea-content h2 {
+    color: var(--ink);
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 28px;
+}
+
+
+.idea-content p {
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   8. FOUR PILLARS
+   ========================================== */
+
+.pillars-section {
+    padding: 110px 8%;
+
+    background: var(--light);
+}
+
+
+.section-heading {
+    max-width: 750px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    color: var(--ink);
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    margin: 18px 0;
+}
+
+
+.section-heading p {
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* Pillar grid */
+
+.pillars-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* Pillar cards */
+
+.pillar-card {
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    border-top: 4px solid var(--green);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.pillar-card:hover {
+    transform: translateY(-7px);
+
+    border-top-color: var(--gold);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+
+.pillar-icon {
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(27, 94, 32, 0.08);
+
+    color: var(--green);
+
+    font-size: 21px;
+}
+
+
+.pillar-card h3 {
+    color: var(--ink);
+
+    font-size: 25px;
+
+    line-height: 1.3;
+
+    margin-bottom: 13px;
+}
+
+
+.pillar-card p {
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+
+.pillar-card a {
+    color: var(--green);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-bottom: 2px solid var(--gold);
+
+    padding-bottom: 4px;
+
+    transition: 0.3s ease;
+}
+
+
+.pillar-card a:hover {
+    color: var(--gold);
+}
+
+
+/* ==========================================
+   9. TEA TABLE / DIALOGUE
+   ========================================== */
+
+.dialogue-section {
+    padding: 115px 8%;
+
+    background: var(--dark);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.dialogue-content {
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+.dialogue-content h2 {
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 28px;
+}
+
+
+.dialogue-content p {
+    color: #d2dad5;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+.dialogue-quote {
+    margin-top: 40px;
+
+    padding: 30px 20px 0;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+
+    color: #e9e4d2 !important;
+
+    font-family: 'Fraunces', Georgia, serif;
+
+    font-size: 24px !important;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   10. CLOSING
+   ========================================== */
+
+.about-closing {
+    padding: 110px 8%;
+
+    background: white;
+
+    text-align: center;
+}
+
+
+.about-closing .about-container {
+    max-width: 850px;
+}
+
+
+.about-closing h2 {
+    color: var(--green);
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 28px;
+}
+
+
+.about-closing p {
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   11. FOOTER
+   ========================================== */
+
+.about-footer {
+    padding: 50px 8% 30px;
+
+    background: #0d1b12;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+    font-family: 'Fraunces', Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+
+.about-footer p {
+    color: #9da8a0;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   12. JAVASCRIPT REVEAL EFFECT
+   ========================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   13. TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .about-logo {
+        left: 5%;
+    }
+
+
+    .about-hero h1 {
+        font-size: 46px;
+    }
+
+
+    .context-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .context-image img {
+        height: 420px;
+    }
+
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   14. MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    .about-header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    .about-logo {
+        left: 20px;
+
+        font-size: 24px;
+    }
+
+
+    .back-home {
+        right: 20px;
+
+        padding: 7px 13px;
+
+        font-size: 12px;
+    }
+
+
+    /* Hero */
+
+    .about-hero {
+        min-height: 550px;
+
+        padding: 120px 20px 80px;
+    }
+
+
+    .about-hero h1 {
+        font-size: 35px;
+    }
+
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+
+    /* Sections */
+
+    .about-introduction,
+    .about-context,
+    .lampstand-idea,
+    .pillars-section,
+    .dialogue-section,
+    .about-closing {
+        padding: 75px 20px;
+    }
+
+
+    .about-introduction h2,
+    .idea-content h2,
+    .dialogue-content h2,
+    .about-closing h2 {
+        font-size: 31px;
+    }
+
+
+    .context-content h2 {
+        font-size: 31px;
+    }
+
+
+    .context-image img {
+        height: 300px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+
+    .pillar-card {
+        padding: 28px 24px;
+    }
+
+
+    .dialogue-quote {
+        font-size: 20px !important;
+    }
+
+
+    .footer-logo {
+        font-size: 26px;
+    }
+
+}

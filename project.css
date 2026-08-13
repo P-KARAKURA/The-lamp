@@ -1,0 +1,893 @@
+/* ==========================================
+   LAMPSTAND — PROJECT / INNER PAGES
+   Shared by: habloclass.html, somewhere.html,
+   creative-arts.html, tea-table.html
+   Matches the design system established in about.css
+   ========================================== */
+
+
+/* ==========================================
+   1. RESET & ROOT
+   ========================================== */
+
+:root {
+    --green: #1b5e20;
+    --gold: #d4af37;
+    --dark: #102218;
+    --ink: #111111;
+    --text: #555555;
+    --light: #f7f7f5;
+    --white: #ffffff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Archivo', Arial, Helvetica, sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    overflow-x: hidden;
+
+    line-height: 1.7;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Fraunces', Georgia, serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   (identical to about.css so the header behaves
+   the same across every page)
+   ========================================== */
+
+.about-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+
+    background: rgba(16, 34, 24, 0.92);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+
+    transition: 0.4s ease;
+}
+
+
+.about-logo {
+    flex-shrink: 0;
+
+    font-family: 'Fraunces', Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    transition: 0.3s ease;
+}
+
+
+.about-logo span {
+    color: var(--gold);
+}
+
+
+.about-logo:hover {
+    transform: scale(1.03);
+}
+
+
+.about-nav {
+    margin-left: auto;
+}
+
+
+.about-nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+
+.about-nav ul li a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+
+.about-nav ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: 0.3s ease;
+}
+
+
+.about-nav ul li a:hover {
+    color: var(--gold);
+}
+
+
+.about-nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.about-nav ul li a.active {
+    color: var(--gold);
+}
+
+
+.about-nav ul li a.active::after {
+    width: 100%;
+}
+
+
+.about-header.scrolled {
+    height: 64px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.about-header.scrolled .about-logo {
+    color: var(--green);
+}
+
+
+.about-header.scrolled .about-nav ul li a {
+    color: #222;
+}
+
+
+.about-header.scrolled .about-nav ul li a:hover,
+.about-header.scrolled .about-nav ul li a.active {
+    color: var(--green);
+}
+
+
+.about-header.scrolled .about-nav ul li a::after {
+    background: var(--gold);
+}
+
+
+.about-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.about-menu-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background: white;
+
+    transition: 0.3s ease;
+}
+
+
+.about-header.scrolled .about-menu-toggle span {
+    background: var(--green);
+}
+
+
+@media (max-width: 950px) {
+
+    .about-header {
+        padding: 0 30px;
+    }
+
+
+    .about-logo {
+        font-size: 27px;
+    }
+
+
+    .about-menu-toggle {
+        display: flex;
+    }
+
+
+    .about-nav {
+        position: absolute;
+
+        top: 100%;
+
+        right: 30px;
+
+        width: 250px;
+
+        padding: 25px 20px;
+
+        background: white;
+
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: 0.3s ease;
+    }
+
+
+    .about-nav ul {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .about-nav ul li {
+        width: 100%;
+    }
+
+
+    .about-nav ul li a {
+        display: block;
+
+        color: #222;
+
+        width: 100%;
+    }
+
+
+    .about-header.menu-open .about-nav {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .about-header.menu-open
+    .about-menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    .about-logo {
+        font-size: 24px;
+    }
+
+
+    .about-nav {
+        right: 20px;
+
+        width: 220px;
+    }
+
+}
+
+
+/* ==========================================
+   3. PROJECT HERO
+   Each project page carries its own accent color
+   via a data attribute, e.g. <body data-accent="hablo">
+   so the hero + icon + underline shift tone per
+   pillar while staying inside the same system.
+   ========================================== */
+
+.project-hero {
+    min-height: 520px;
+
+    padding: 160px 8% 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(212, 175, 55, 0.16),
+            transparent 55%
+        ),
+        linear-gradient(155deg, var(--dark), #0a150e 70%);
+
+    color: white;
+}
+
+
+.inner-hero-content {
+    max-width: 780px;
+
+    margin: 0 auto;
+}
+
+
+.inner-hero-content > span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.inner-hero-content h1 {
+    font-size: 50px;
+
+    line-height: 1.2;
+
+    margin: 20px 0 18px;
+
+    color: white;
+}
+
+
+.inner-hero-content p {
+    color: #d8ded9;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   4. COMMON CONTAINER
+   ========================================== */
+
+.content-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   5. INNER SECTION (THE IDEA)
+   ========================================== */
+
+.inner-section {
+    padding: 110px 8%;
+
+    background: white;
+}
+
+
+.section-tag {
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.inner-section h2 {
+    color: var(--green);
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    margin: 18px 0 26px;
+}
+
+
+.inner-section p {
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+.inner-section blockquote {
+    margin: 35px 0;
+
+    padding: 22px 28px;
+
+    border-left: 3px solid var(--gold);
+
+    background: var(--light);
+
+    color: var(--ink);
+
+    font-family: 'Fraunces', Georgia, serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   6. HIGHLIGHT GRID
+   ========================================== */
+
+.highlight-section {
+    padding: 100px 8%;
+
+    background: var(--light);
+}
+
+.highlight-section .content-container {
+    max-width: 1100px;
+}
+
+
+.highlight-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+.highlight-grid > div {
+    padding: 38px 30px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    border-top: 4px solid var(--green);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.highlight-grid > div:hover {
+    transform: translateY(-7px);
+
+    border-top-color: var(--gold);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+
+.highlight-grid i {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 52px;
+
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(27, 94, 32, 0.08);
+
+    color: var(--green);
+
+    font-size: 20px;
+}
+
+
+.highlight-grid h3 {
+    color: var(--ink);
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+.highlight-grid p {
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   7. CLOSING SECTION (dark, matches
+   about.css's .dialogue-section)
+   ========================================== */
+
+.closing-section {
+    padding: 110px 8%;
+
+    background: var(--dark);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.closing-icon {
+    font-size: 34px;
+
+    color: var(--gold);
+
+    margin-bottom: 22px;
+    display: inline-block;
+}
+
+
+.closing-section h2 {
+    color: white;
+
+    font-size: 36px;
+
+    line-height: 1.3;
+
+    margin-bottom: 16px;
+}
+
+
+.closing-section p {
+    color: #d2dad5;
+
+    font-size: 17px;
+}
+
+
+.closing-section h3 {
+    margin-top: 20px;
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   8. PROJECT GRID (used on about.html-linked
+   pages that cross-reference the other pillars)
+   ========================================== */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+    margin-top: 20px;
+}
+
+
+.project-link-card {
+    padding: 34px 28px;
+
+    background: var(--light);
+
+    border-radius: 14px;
+
+    border-top: 4px solid var(--green);
+
+    color: var(--ink);
+
+    transition: 0.3s ease;
+}
+
+
+.project-link-card:hover {
+    transform: translateY(-6px);
+
+    border-top-color: var(--gold);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+.project-link-card i {
+    font-size: 22px;
+
+    color: var(--green);
+
+    margin-bottom: 14px;
+
+    display: inline-block;
+}
+
+
+.project-link-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.project-link-card p {
+    color: var(--text);
+
+    font-size: 14.5px;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+}
+
+
+.project-link-card span {
+    color: var(--green);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+
+.inner-footer {
+    padding: 45px 8% 30px;
+
+    background: #0d1b12;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.inner-footer p {
+    color: #9da8a0;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+.inner-footer a {
+    color: var(--gold);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.inner-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   10. SCROLL REVEAL (same convention as about.css)
+   ========================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   11. TABLET / MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .inner-hero-content h1 {
+        font-size: 40px;
+    }
+
+
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .project-hero {
+        min-height: 460px;
+
+        padding: 120px 20px 70px;
+    }
+
+
+    .inner-hero-content h1 {
+        font-size: 32px;
+    }
+
+
+    .inner-hero-content p {
+        font-size: 16px;
+    }
+
+
+    .inner-section,
+    .highlight-section,
+    .closing-section {
+        padding: 75px 20px;
+    }
+
+
+    .inner-section h2 {
+        font-size: 29px;
+    }
+
+
+    .inner-section blockquote {
+        font-size: 18px;
+
+        padding: 18px 22px;
+    }
+
+
+    .closing-section h2 {
+        font-size: 27px;
+    }
+
+}
