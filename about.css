@@ -1133,3 +1133,39 @@ a {
     }
 
 }
+/* ==========================================
+   CONTINUE / READ MORE BUTTON
+========================================== */
+
+.read-more {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 11px 22px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 30px;
+
+    color: var(--green);
+
+    background: transparent;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.read-more:hover {
+    background: var(--green);
+
+    color: white;
+
+    border-color: var(--green);
+
+    transform: translateY(-2px);
+}
