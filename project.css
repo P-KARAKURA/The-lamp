@@ -407,6 +407,7 @@ a {
         linear-gradient(155deg, var(--dark), #0a150e 70%);
 
     color: white;
+
 }
 
 
@@ -558,7 +559,7 @@ a {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 28px;
+    gap: 2px;
 }
 
 
