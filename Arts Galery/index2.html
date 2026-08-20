@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Somewhere in Africa | Gallery | LAMPSTAND</title> <!--[cite: 4] -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"> <!--[cite: 4] -->
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin> <!--[cite: 4] -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+        rel="stylesheet"
+    > <!--[cite: 4] -->
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    > <!--[cite: 4] -->
+
+    <!-- Main Project CSS -->
+    <link rel="stylesheet"
+          href="../project.css"> <!--[cite: 4] -->
+
+    <!-- Gallery CSS -->
+    <link rel="stylesheet"
+          href="gallery.css"> <!--[cite: 4] -->
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     INTRO / VISUAL OPENING
+================================================== -->
+
+<section class="gallery-intro"> <!--[cite: 4] -->
+
+
+    <!-- Background Images -->
+
+    <div class="intro-slideshow"> <!--[cite: 4] -->
+
+
+        <div class="intro-slide active"> <!--[cite: 4] -->
+
+            <img
+                src="images/best view.jpg"
+                alt="Scenic African landscape view"
+            >
+
+        </div>
+
+
+        <div class="intro-slide"> <!--[cite: 4] -->
+
+            <img
+                src="images/community.jpg"
+                alt="Community members sharing a moment"
+            >
+
+        </div>
+
+
+        <div class="intro-slide"> <!--[cite: 4] -->
+
+            <img
+                src="images/djino one.png"
+                alt="Children smiling outdoors"
+            >
+
+        </div>
+
+
+        <div class="intro-slide"> <!--[cite: 4] -->
+
+            <img
+                src="images/PXL_20230913_065426585.PORTRAIT.jpg"
+                alt="Group of young students with books"
+            >
+
+        </div>
+
+
+        <div class="intro-slide"> <!--[cite: 4] -->
+
+            <img
+                src="images/PXL_20231109_091357088.MP.jpg"
+                alt="Life along the water shore"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Dark Overlay -->
+
+    <div class="intro-overlay"></div> <!--[cite: 4] -->
+
+
+    <!-- Navigation -->
+
+    <header class="gallery-header-nav"> <!--[cite: 4] -->
+
+        <a href="../index.html"
+           class="gallery-logo"> <!--[cite: 4] -->
+
+            Lamp<span>Stand</span> <!--[cite: 4] -->
+
+        </a>
+
+
+        <a href="../somewhere.html"
+           class="gallery-close"> <!--[cite: 4] -->
+
+            <i class="fas fa-arrow-left"></i> <!--[cite: 4] -->
+
+            Somewhere in Africa <!--[cite: 1] -->
+
+        </a>
+
+
+    </header>
+
+
+    <!-- Intro Message -->
+
+    <div class="intro-content"> <!--[cite: 4] -->
+
+
+        <span class="intro-label"> <!--[cite: 4] -->
+
+            <i class="fas fa-camera"></i> <!--[cite: 1] -->
+
+            SOMEWHERE IN AFRICA
+
+        </span>
+
+
+        <h1> <!--[cite: 4] -->
+
+            Stories beyond<br>
+            <span>the headlines.</span> <!--[cite: 1] -->
+
+        </h1>
+
+
+        <p class="intro-message active"> <!--[cite: 4] -->
+
+            Every face holds a history.
+
+        </p>
+
+
+        <p class="intro-message"> <!--[cite: 4] -->
+
+            Every place carries a pulse.
+
+        </p>
+
+
+        <p class="intro-message"> <!--[cite: 4] -->
+
+            Beyond statistics and news cycles...
+
+        </p>
+
+
+        <p class="intro-message"> <!--[cite: 4] -->
+
+            Are ordinary lives, quiet strength, and beauty.
+
+        </p>
+
+
+        <p class="intro-message"> <!--[cite: 4] -->
+
+            <strong>
+                This is where we capture them.
+            </strong>
+
+        </p>
+
+
+        <button class="enter-gallery"
+                id="enterGallery"> <!--[cite: 4] -->
+
+            Explore the collection <!--[cite: 4] -->
+
+            <span> <!--[cite: 4] -->
+
+                <i class="fas fa-arrow-down"></i> <!--[cite: 4] -->
+
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- Slide Progress -->
+
+    <div class="intro-progress"> <!--[cite: 4] -->
+
+        <span class="progress-current">
+            01
+        </span> <!--[cite: 4] -->
+
+        <div class="progress-line"> <!--[cite: 4] -->
+
+            <span id="progressBar"></span> <!--[cite: 4] -->
+
+        </div>
+
+        <span>
+            05
+        </span> <!--[cite: 4] -->
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GALLERY INTRODUCTION
+================================================== -->
+
+<section class="gallery-story-intro"
+         id="gallery"> <!--[cite: 4] -->
+
+
+    <div class="gallery-story-inner"> <!--[cite: 4] -->
+
+
+        <span class="section-tag"> <!--[cite: 4] -->
+
+            THE VISION
+
+        </span>
+
+
+        <h2> <!--[cite: 4] -->
+
+            People. Places.
+            <br>
+            Everyday Moments.
+
+        </h2>
+
+
+        <p> <!--[cite: 4] -->
+
+            Somewhere in Africa is an evolving visual archive exploring the warmth, 
+            resilience, and authentic reality of people and landscapes across the continent. <!--[cite: 1] -->
+
+        </p>
+
+
+        <p> <!--[cite: 4] -->
+
+            Through photographic portraits, serene vistas, and community gatherings, 
+            we move beyond external narratives to honor the real stories unfolding every day.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FILTER NAVIGATION
+================================================== -->
+
+<section class="gallery-section"> <!--[cite: 4] -->
+
+
+    <div class="gallery-filters"> <!--[cite: 4] -->
+
+
+        <button class="filter-btn active"
+                data-filter="all"> <!--[cite: 4] -->
+
+            All Encounters
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="people">
+
+            People & Portraits
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="places">
+
+            Landscapes & Places
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="community"> <!--[cite: 4] -->
+
+            Community Life
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FEATURED STORY
+    ================================================== -->
+
+    <article class="featured-story"
+             data-category="places"> <!--[cite: 4] -->
+
+
+        <div class="featured-image"> <!--[cite: 4] -->
+
+
+            <img
+                src="images/best view.jpg"
+                alt="Overlook of hills and distant lake at sunset"
+            >
+
+
+            <span class="featured-number"> <!--[cite: 4] -->
+
+                01
+
+            </span>
+
+
+        </div>
+
+
+        <div class="featured-content"> <!--[cite: 4] -->
+
+
+            <span class="story-category"> <!--[cite: 4] -->
+
+                LANDSCAPES & PLACES
+
+            </span>
+
+
+            <h2> <!--[cite: 4] -->
+
+                The Ridge View
+
+            </h2>
+
+
+            <p> <!--[cite: 4] -->
+
+                A quiet perspective overlooking rolling green hills, quiet roads, 
+                and the horizon stretching towards distant waters at golden hour.
+
+            </p>
+
+
+            <button class="story-open"> <!--[cite: 4] -->
+
+                View picture
+
+                <i class="fas fa-arrow-right"></i> <!--[cite: 4] -->
+
+            </button>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <!-- ==================================================
+         PHOTO COLLECTION
+    ================================================== -->
+
+    <div class="gallery-grid"> <!--[cite: 4] -->
+
+
+        <!-- STORY 01 -->
+
+        <article class="gallery-card"
+                 data-category="people"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/community.jpg"
+                    alt="Three young men standing together outdoors"
+                    loading="lazy" <!--[cite: 4] -->
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    PEOPLE
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    02
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    Brothers in Mind
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    Shared laughter, strong bonds, and the welcoming warmth of local youth.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 02 -->
+
+        <article class="gallery-card"
+                 data-category="people"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/djino one.png"
+                    alt="Two young children smiling during outdoor play"
+                    loading="lazy" <!--[cite: 4] -->
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    PEOPLE
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    03
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    Pure Joy
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    Unfiltered smiles, playful moments, and the bright energy of childhood.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 03 -->
+
+        <article class="gallery-card"
+                 data-category="community"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/PXL_20230913_065426585.PORTRAIT.jpg"
+                    alt="Children gathered together outside holding books"
+                    loading="lazy" <!--[cite: 4] -->
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    COMMUNITY
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    04
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    Young Readers
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    A gathering of minds eager to share, learn, and grow through books.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 04 -->
+
+        <article class="gallery-card"
+                 data-category="community"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/PXL_20230913_065457753.PORTRAIT.jpg"
+                    alt="Four children holding the Value of Giving book"
+                    loading="lazy" 
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    COMMUNITY
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    05
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    The Value of Giving
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    Lessons in generosity and unity shared standing by the doorway.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 05 -->
+
+        <article class="gallery-card"
+                 data-category="places"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/PXL_20231109_091220893.MP.jpg"
+                    alt="Green hills overlooking clear water"
+                    loading="lazy" <!--[cite: 4] -->
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    PLACES
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    06
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    Lakeside Sanctuary
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    Thick green slopes meeting peaceful waters under blue skies.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 06 -->
+
+        <article class="gallery-card"
+                 data-category="places"> <!--[cite: 4] -->
+
+
+            <div class="gallery-image"> <!--[cite: 4] -->
+
+                <img
+                    src="images/PXL_20231109_091357088.MP.jpg"
+                    alt="People gathered along the shoreline by canoes"
+                    loading="lazy" <!--[cite: 4] -->
+                >
+
+                <span class="gallery-tag"> <!--[cite: 4] -->
+
+                    PLACES
+
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content"> <!--[cite: 4] -->
+
+                <span> <!--[cite: 4] -->
+
+                    07
+
+                </span>
+
+
+                <h3> <!--[cite: 4] -->
+
+                    Life on the Water
+
+                </h3>
+
+
+                <p> <!--[cite: 4] -->
+
+                    Activity, canoes, and community gathering along the banks.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+    </div>
+    
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL MESSAGE
+================================================== -->
+
+<section class="gallery-ending"> <!--[cite: 4] -->
+
+
+    <div class="gallery-ending-inner"> <!--[cite: 4] -->
+
+
+        <i class="fas fa-globe-africa"></i> <!--[cite: 1] -->
+
+
+        <h2> <!--[cite: 4] -->
+
+            More places to discover.
+            <br>
+            More lives to meet.
+
+        </h2>
+
+
+        <p> <!--[cite: 4] -->
+
+            This visual archive continues to expand with new journeys, locations, 
+            and stories from across the continent.
+
+        </p>
+
+
+        <a href="../somewhere.html">
+
+            Return to Somewhere in Africa 
+
+            <i class="fas fa-arrow-right"></i> 
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     LIGHTBOX
+================================================== -->
+
+<div class="lightbox"
+     id="lightbox"> 
+
+
+    <button class="lightbox-close"
+            id="lightboxClose"> 
+
+        <i class="fas fa-xmark"></i> 
+
+    </button>
+
+
+    <button class="lightbox-prev"
+            id="lightboxPrev"> 
+
+        <i class="fas fa-arrow-left"></i> 
+
+    </button>
+
+
+    <div class="lightbox-content"> 
+
+
+        <div class="lightbox-counter"> 
+            <span id="currentImage">
+                01
+            </span> 
+            /
+
+            <span id="totalImages">
+                07
+            </span>
+
+        </div>
+
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt=""
+        > 
+
+        <div class="lightbox-caption"> 
+
+            <span id="lightboxCategory"></span> 
+
+
+            <h2 id="lightboxTitle"></h2> 
+
+            <p id="lightboxDescription"></p> 
+
+
+        </div>
+
+
+    </div>
+
+
+    <button class="lightbox-next"
+            id="lightboxNext"> 
+
+        <i class="fas fa-arrow-right"></i> 
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="gallery.js"></script> 
+
+</body>
+
+</html>
