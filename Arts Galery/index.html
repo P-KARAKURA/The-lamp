@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Visual Stories | LAMPSTAND</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Project CSS -->
+    <link rel="stylesheet"
+          href="../project.css">
+
+    <!-- Gallery CSS -->
+    <link rel="stylesheet"
+          href="gallery.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     INTRO / VISUAL OPENING
+================================================== -->
+
+<section class="gallery-intro">
+
+
+    <!-- Background Images -->
+
+    <div class="intro-slideshow">
+
+
+        <div class="intro-slide active">
+
+            <img
+                src="images/April Bukavu.png"
+                alt="Creative artwork"
+            >
+
+        </div>
+
+
+        <div class="intro-slide">
+
+            <img
+                src="images/img_1_1708602598444.webp"
+                alt="Young people playing football"
+            >
+
+        </div>
+
+
+        <div class="intro-slide">
+
+            <img
+                src="images/IMG_20260524_175609_646.jpg"
+                alt="HABLOCLASS discussion"
+            >
+
+        </div>
+
+
+        <div class="intro-slide">
+
+            <img
+                src="images/IMG_20260525_094948_757.jpg"
+                alt="Children in the community"
+            >
+
+        </div>
+
+
+        <div class="intro-slide">
+
+            <img
+                src="images/April Bukavu.png"
+                alt="Tea Table gathering"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Dark Overlay -->
+
+    <div class="intro-overlay"></div>
+
+
+    <!-- Navigation -->
+
+    <header class="gallery-header-nav">
+
+        <a href="../index.html"
+           class="gallery-logo">
+
+            Lamp<span>Stand</span>
+
+        </a>
+
+
+        <a href="../creative-arts.html"
+           class="gallery-close">
+
+            <i class="fas fa-arrow-left"></i>
+
+            Creative Arts
+
+        </a>
+
+    </header>
+
+
+    <!-- Intro Message -->
+
+    <div class="intro-content">
+
+
+        <span class="intro-label">
+
+            <i class="fas fa-camera-retro"></i>
+
+            LAMPSTAND VISUAL STORIES
+
+        </span>
+
+
+        <h1>
+
+            The stories<br>
+            <span>we carry.</span>
+
+        </h1>
+
+
+        <p class="intro-message active">
+
+            Some stories are spoken.
+
+        </p>
+
+
+        <p class="intro-message">
+
+            Some are painted.
+
+        </p>
+
+
+        <p class="intro-message">
+
+            Some are captured in a single moment.
+
+        </p>
+
+
+        <p class="intro-message">
+
+            And some live quietly in the people
+            and communities we encounter.
+
+        </p>
+
+
+        <p class="intro-message">
+
+            <strong>
+                This is where we preserve them.
+            </strong>
+
+        </p>
+
+
+        <button class="enter-gallery"
+                id="enterGallery">
+
+            Explore the stories
+
+            <span>
+
+                <i class="fas fa-arrow-down"></i>
+
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- Slide Progress -->
+
+    <div class="intro-progress">
+
+        <span class="progress-current">
+            01
+        </span>
+
+        <div class="progress-line">
+
+            <span id="progressBar"></span>
+
+        </div>
+
+        <span>
+            05
+        </span>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GALLERY INTRODUCTION
+================================================== -->
+
+<section class="gallery-story-intro"
+         id="gallery">
+
+
+    <div class="gallery-story-inner">
+
+
+        <span class="section-tag">
+
+            BEYOND THE IMAGE
+
+        </span>
+
+
+        <h2>
+
+            People. Places.
+            <br>
+            Memory. Hope.
+
+        </h2>
+
+
+        <p>
+
+            From communities shaped by displacement and
+            resilience to moments of learning, creativity,
+            friendship, and everyday life, these images
+            document the experiences that inspire LAMPSTAND.
+
+        </p>
+
+
+        <p>
+
+            We believe photographs should do more than
+            decorate a page. They can preserve memory,
+            amplify voices, open conversations, and remind
+            us that behind every story is a person.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FILTER NAVIGATION
+================================================== -->
+
+<section class="gallery-section">
+
+
+    <div class="gallery-filters">
+
+
+        <button class="filter-btn active"
+                data-filter="all">
+
+            All Stories
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="arts">
+
+            Creative Arts
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="community">
+
+            Community
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="habloclass">
+
+            HABLOCLASS
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="storytelling">
+
+            Storytelling
+
+        </button>
+
+
+        <button class="filter-btn"
+                data-filter="tea-table">
+
+            Tea Table
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FEATURED STORY
+    ================================================== -->
+
+    <article class="featured-story"
+             data-category="arts">
+
+
+        <div class="featured-image">
+
+
+            <img
+                src="images/art.png"
+                alt="Surviving the Barren Land"
+            >
+
+
+            <span class="featured-number">
+
+                01
+
+            </span>
+
+
+        </div>
+
+
+        <div class="featured-content">
+
+
+            <span class="story-category">
+
+                CREATIVE ARTS
+
+            </span>
+
+
+            <h2>
+
+                Surviving the
+                Barren Land
+
+            </h2>
+
+
+            <p>
+
+                A visual reflection on survival,
+                migration, uncertainty, and the
+                enduring search for hope.
+
+            </p>
+
+
+            <button class="story-open">
+
+                Enter story
+
+                <i class="fas fa-arrow-right"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <!-- ==================================================
+         PHOTO COLLECTION
+    ================================================== -->
+
+    <div class="gallery-grid">
+
+
+        <!-- STORY 01 -->
+
+        <article class="gallery-card"
+                 data-category="community">
+
+
+            <div class="gallery-image">
+
+                <img
+                    src="images/Mupenzi.jpeg"
+                    alt="Youth playing football"
+                    loading="lazy"
+                >
+
+                <span class="gallery-tag">
+                    COMMUNITY
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+
+                    Spirit in Motion
+
+                </h3>
+
+                <p>
+
+                    Youth, movement, friendship,
+                    and the energy of everyday life.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 02 -->
+
+        <article class="gallery-card"
+                 data-category="habloclass">
+
+
+            <div class="gallery-image">
+
+                <img
+                    src="images/IMG_20260524_175609_646.jpg"
+                    alt="HABLOCLASS discussion"
+                    loading="lazy"
+                >
+
+                <span class="gallery-tag">
+                    HABLOCLASS
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+
+                    The Dialogue Circle
+
+                </h3>
+
+                <p>
+
+                    Learning through conversation,
+                    reflection, and shared confidence.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 03 -->
+
+        <article class="gallery-card"
+                 data-category="storytelling">
+
+
+            <div class="gallery-image">
+
+                <img
+                    src="images/IMG_20260525_094948_757.jpg"
+                    alt="Children in the community"
+                    loading="lazy"
+                >
+
+                <span class="gallery-tag">
+                    STORYTELLING
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+
+                    Eyes of Tomorrow
+
+                </h3>
+
+                <p>
+
+                    A quiet portrait of childhood,
+                    resilience, and possibility.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- STORY 04 -->
+
+        <article class="gallery-card"
+                 data-category="tea-table">
+
+
+            <div class="gallery-image">
+
+                <img
+                    src="images/PXL_20230922_134511408.MP.jpg"
+                    alt="Tea Table gathering"
+                    loading="lazy"
+                >
+
+                <span class="gallery-tag">
+                    TEA TABLE
+                </span>
+
+            </div>
+
+
+            <div class="gallery-card-content">
+
+                <span>
+                    05
+                </span>
+
+                <h3>
+
+                    The Tea Table
+
+                </h3>
+
+                <p>
+
+                    A place where people sit,
+                    listen, speak, and understand.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+
+
+    </div>
+    
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL MESSAGE
+================================================== -->
+
+<section class="gallery-ending">
+
+
+    <div class="gallery-ending-inner">
+
+
+        <i class="fas fa-lightbulb"></i>
+
+
+        <h2>
+
+            Every community
+            carries a story.
+
+        </h2>
+
+
+        <p>
+
+            LAMPSTAND exists to help those stories
+            be seen, heard, remembered, and connected
+            to new possibilities.
+
+        </p>
+
+
+        <a href="../index.html">
+
+            Return to LAMPSTAND
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     LIGHTBOX
+================================================== -->
+
+<div class="lightbox"
+     id="lightbox">
+
+
+    <button class="lightbox-close"
+            id="lightboxClose">
+
+        <i class="fas fa-xmark"></i>
+
+    </button>
+
+
+    <button class="lightbox-prev"
+            id="lightboxPrev">
+
+        <i class="fas fa-arrow-left"></i>
+
+    </button>
+
+
+    <div class="lightbox-content">
+
+
+        <div class="lightbox-counter">
+
+            <span id="currentImage">
+                01
+            </span>
+
+            /
+
+            <span id="totalImages">
+                05
+            </span>
+
+        </div>
+
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt=""
+        >
+
+
+        <div class="lightbox-caption">
+
+
+            <span id="lightboxCategory"></span>
+
+
+            <h2 id="lightboxTitle"></h2>
+
+
+            <p id="lightboxDescription"></p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <button class="lightbox-next"
+            id="lightboxNext">
+
+        <i class="fas fa-arrow-right"></i>
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="gallery.js"></script>
+
+</body>
+
+</html>

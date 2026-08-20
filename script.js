@@ -53,10 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+                // menuToggle.classList.remove('active');
+                // navMenu.classList.remove('active');
+
+            //     navMenu.style.visibility = 'hidden';
+            // navMenu.style.opacity = '0';
             });
         });
+
+
+     
     }
 
 

@@ -764,6 +764,54 @@ a {
 
     font-weight: 700;
 }
+/* ==========================
+   ARTS GALLERY BUTTON
+=========================== */
+
+.arts-gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 45px;
+    padding: 14px 24px;
+
+    font-family: "Archivo", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: #ffffff;
+    background: #1f5f4a;
+
+    text-decoration: none;
+
+    border: 1px solid #1f5f4a;
+    border-radius: 6px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.arts-gallery-btn i {
+    font-size: 0.9rem;
+}
+
+.arts-gallery-btn span {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.arts-gallery-btn:hover {
+    background: #174936;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.arts-gallery-btn:hover span {
+    transform: translateX(4px);
+}
 
 
 /* ==========================================

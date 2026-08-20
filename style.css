@@ -1607,9 +1607,10 @@ header.scrolled .join-btn:hover {
     transition: 0.3s ease;
 }
 
- /* .about-header.menu-open */
-    .about-menu-toggle span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+ .about-header.menu-open
+    
+     .about-menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
 
@@ -1620,9 +1621,10 @@ header.scrolled .join-btn:hover {
 
 
     /* .about-header.menu-open */
-    .about-menu-toggle span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .about-menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
+   
 
 
 /* ==========================

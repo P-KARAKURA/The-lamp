@@ -1,0 +1,1068 @@
+/* =========================================================
+   LAMPSTAND — VISUAL STORIES
+   GALLERY CSS
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f7f5ef;
+    color: #172018;
+    font-family: "Archivo", sans-serif;
+}
+
+
+/* =========================================================
+   CINEMATIC INTRO
+========================================================= */
+
+.gallery-intro {
+    position: relative;
+
+    height: 100vh;
+    min-height: 680px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND SLIDES
+========================================================= */
+
+.intro-slideshow {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+}
+
+.intro-slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.8s ease,
+        transform 7s ease;
+}
+
+.intro-slide.active {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+.intro-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.82) 0%,
+            rgba(0, 0, 0, 0.55) 42%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.gallery-header-nav {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 28px 5%;
+}
+
+.gallery-logo {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.45rem;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+.gallery-logo span {
+    color: #d4af37;
+}
+
+.gallery-close {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: rgba(255,255,255,0.85);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.gallery-close:hover {
+    color: #d4af37;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+========================================================= */
+
+.intro-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 90%);
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 7%;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.intro-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    width: fit-content;
+
+    margin-bottom: 22px;
+
+    color: #d4af37;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.intro-content h1 {
+    margin: 0;
+
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(4rem, 9vw, 8rem);
+
+    font-weight: 600;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+.intro-content h1 span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   CHANGING MESSAGES
+========================================================= */
+
+.intro-message {
+    position: absolute;
+
+    left: 7%;
+
+    bottom: 23%;
+
+    max-width: 600px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.88);
+
+    font-size: clamp(1rem, 2vw, 1.25rem);
+
+    line-height: 1.7;
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.intro-message.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.intro-message strong {
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-gallery {
+    position: absolute;
+
+    left: 7%;
+
+    bottom: 9%;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: "Archivo", sans-serif;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.enter-gallery span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    border-radius: 50%;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.enter-gallery:hover span {
+    background: #d4af37;
+
+    color: #172018;
+
+    transform: translateY(4px);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.intro-progress {
+    position: absolute;
+
+    z-index: 10;
+
+    right: 5%;
+    bottom: 9%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 1px;
+}
+
+.progress-line {
+    position: relative;
+
+    width: 120px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.35);
+}
+
+.progress-line span {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 20%;
+    height: 100%;
+
+    background: #d4af37;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   STORY INTRO
+========================================================= */
+
+.gallery-story-intro {
+    padding: 130px 7% 110px;
+
+    background: #f7f5ef;
+}
+
+.gallery-story-inner {
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: #1b5e20;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.gallery-story-inner h2 {
+    max-width: 800px;
+
+    margin: 0 0 30px;
+
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 0.98;
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+}
+
+.gallery-story-inner p {
+    max-width: 720px;
+
+    margin: 0 0 18px;
+
+    color: #555;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 50px 5% 120px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 55px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+
+    border: 1px solid #1b5e20;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #1b5e20;
+
+    font-family: "Archivo", sans-serif;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #1b5e20;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FEATURED STORY
+========================================================= */
+
+.featured-story {
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.65fr;
+
+    min-height: 520px;
+
+    margin-bottom: 70px;
+
+    overflow: hidden;
+
+    background: #172018;
+
+    color: #ffffff;
+}
+
+.featured-image {
+    position: relative;
+
+    min-height: 520px;
+
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s ease;
+}
+
+.featured-story:hover .featured-image img {
+    transform: scale(1.04);
+}
+
+.featured-number {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px;
+}
+
+.story-category {
+    margin-bottom: 20px;
+
+    color: #d4af37;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.featured-content h2 {
+    margin: 0 0 22px;
+
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+
+    line-height: 0.95;
+}
+
+.featured-content p {
+    max-width: 420px;
+
+    margin: 0 0 35px;
+
+    color: rgba(255,255,255,0.7);
+
+    line-height: 1.7;
+}
+
+.story-open {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.story-open i {
+    color: #d4af37;
+
+    transition: transform 0.3s ease;
+}
+
+.story-open:hover i {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    gap: 25px;
+}
+
+.gallery-card {
+    grid-column: span 4;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+}
+
+.gallery-image {
+    position: relative;
+
+    height: 320px;
+
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.gallery-card:hover .gallery-image img {
+    transform: scale(1.06);
+}
+
+.gallery-tag {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 6px 10px;
+
+    background: #1b5e20;
+
+    color: #ffffff;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.gallery-card-content {
+    padding: 22px 20px 25px;
+}
+
+.gallery-card-content > span {
+    color: #d4af37;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.gallery-card-content h3 {
+    margin: 10px 0 8px;
+
+    font-family: "Fraunces", serif;
+
+    font-size: 1.5rem;
+}
+
+.gallery-card-content p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+.gallery-card.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.gallery-ending {
+    padding: 130px 25px;
+
+    background: #1b5e20;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.gallery-ending-inner {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.gallery-ending i {
+    color: #d4af37;
+
+    font-size: 2rem;
+}
+
+.gallery-ending h2 {
+    margin: 25px 0 20px;
+
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    line-height: 1;
+}
+
+.gallery-ending p {
+    margin: 0 auto 30px;
+
+    max-width: 600px;
+
+    color: rgba(255,255,255,0.75);
+
+    line-height: 1.7;
+}
+
+.gallery-ending a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.gallery-ending a i {
+    font-size: 0.8rem;
+
+    transition: transform 0.3s ease;
+}
+
+.gallery-ending a:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(8, 12, 9, 0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.lightbox-content {
+    width: min(1000px, 90vw);
+
+    text-align: center;
+}
+
+.lightbox-counter {
+    margin-bottom: 15px;
+
+    color: #d4af37;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 68vh;
+
+    object-fit: contain;
+
+    border-radius: 3px;
+}
+
+.lightbox-caption {
+    margin-top: 18px;
+}
+
+.lightbox-caption > span {
+    color: #d4af37;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.lightbox-caption h2 {
+    margin: 8px 0;
+
+    color: #ffffff;
+
+    font-family: "Fraunces", serif;
+
+    font-size: 2rem;
+}
+
+.lightbox-caption p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,0.7);
+
+    line-height: 1.6;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #d4af37;
+
+    color: #172018;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 30px;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .intro-content {
+        padding-left: 8%;
+    }
+
+    .intro-content h1 {
+        letter-spacing: -2px;
+    }
+
+    .featured-story {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 400px;
+    }
+
+    .featured-content {
+        padding: 45px;
+    }
+
+    .gallery-card {
+        grid-column: span 6;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .gallery-header-nav {
+        padding: 22px 20px;
+    }
+
+    .gallery-close {
+        font-size: 0.75rem;
+    }
+
+    .intro-content {
+        width: 100%;
+
+        padding:
+            0 25px 100px;
+    }
+
+    .intro-content h1 {
+        font-size: clamp(3.5rem, 18vw, 5rem);
+    }
+
+    .intro-message {
+        left: 25px;
+        right: 25px;
+
+        bottom: 22%;
+    }
+
+    .intro-progress {
+        right: 25px;
+        bottom: 5%;
+    }
+
+    .gallery-story-intro {
+        padding: 90px 25px;
+    }
+
+    .gallery-story-inner h2 {
+        font-size: 3rem;
+    }
+
+    .gallery-section {
+        padding:
+            30px 18px 80px;
+    }
+
+    .featured-story {
+        display: block;
+    }
+
+    .featured-image {
+        min-height: 330px;
+    }
+
+    .featured-content {
+        padding: 35px 25px 45px;
+    }
+
+    .gallery-card {
+        grid-column: span 12;
+    }
+
+    .gallery-image {
+        height: 280px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 18px;
+    }
+
+}
