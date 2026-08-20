@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HABLOCLASS | Speak. Connect. Grow.</title>
+
+    <!-- Google Fonts (Fraunces & Archivo matching the Lampstand Ecosystem) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ==================================================
+           COLOR PALETTE & DESIGN SYSTEM
+           ================================================== */
+        :root {
+            --color-green: #1b5e20;
+            --color-green-dark: #123e15;
+            --color-green-soft: #24732a;
+            --color-green-light: #e8f5e9;
+            --color-gold: #d4af37;
+            --color-gold-hover: #f1c40f;
+            --color-bg-light: #f9fbf9;
+            --color-card-bg: #ffffff;
+            --color-text-main: #1c281e;
+            --color-text-muted: #526355;
+            --font-heading: 'Fraunces', serif;
+            --font-body: 'Archivo', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            --shadow-subtle: 0 10px 30px rgba(27, 94, 32, 0.08);
+            --shadow-hover: 0 18px 40px rgba(27, 94, 32, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================================================
+           HEADER / NAVIGATION
+           ================================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(249, 251, 249, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(27, 94, 32, 0.1);
+            padding: 1.2rem 2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-green-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-logo span {
+            color: var(--color-gold);
+        }
+
+        .brand-badge {
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            background: var(--color-green-light);
+            color: var(--color-green);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-green);
+        }
+
+        .btn-nav {
+            background: var(--color-green);
+            color: #fff !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            border: 1px solid var(--color-gold);
+            font-weight: 600 !important;
+
+        }
+
+        .btn-nav:hover {
+            background: var(--color-gold);
+            color: var(--color-green-dark) !important;
+        }
+
+        /* ==================================================
+           HERO SECTION
+           ================================================== */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-green);
+            background: var(--color-green-light);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(27, 94, 32, 0.2);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.8rem, 4.5vw, 4rem);
+            line-height: 1.15;
+            color: var(--color-green-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            color: var(--color-gold);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--color-green);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            border: 1px solid var(--color-gold);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-gold);
+            color: var(--color-green-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--color-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary:hover {
+            color: var(--color-gold);
+        }
+
+        /* Hero Image Slider Container */
+        .hero-slider-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            border: 3px solid #fff;
+            background: #fff;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(to top, rgba(18, 62, 21, 0.95), transparent);
+            color: #fff;
+        }
+
+        .slide-caption h4 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-gold);
+        }
+
+        .slide-caption p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 10;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slider-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--color-gold);
+            color: var(--color-green-dark);
+            border-color: var(--color-gold);
+        }
+
+        /* ==================================================
+           INTRO / MISSION SECTION
+           ================================================== */
+        .mission {
+            background: #fff;
+            padding: 6rem 2rem;
+            border-top: 1px solid rgba(27, 94, 32, 0.05);
+            border-bottom: 1px solid rgba(27, 94, 32, 0.05);
+        }
+
+        .mission-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--color-gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .mission h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-green-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .mission-lead {
+            font-size: 1.25rem;
+            color: var(--color-text-main);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: var(--color-bg-light);
+            border-radius: 16px;
+            border: 1px solid rgba(27, 94, 32, 0.08);
+            transition: var(--transition-smooth);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold);
+        }
+
+        .stat-card h3 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--color-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* ==================================================
+           PROGRAMS SECTION
+           ================================================== */
+        .programs {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-green-dark);
+            margin-top: 0.5rem;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(27, 94, 32, 0.08);
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--color-green);
+            transition: var(--transition-smooth);
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .program-card:hover::before {
+            background: var(--color-gold);
+        }
+
+        .program-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--color-green-light);
+            color: var(--color-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: var(--color-green-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .program-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .program-link {
+            text-decoration: none;
+            color: var(--color-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .program-link:hover {
+            color: var(--color-gold);
+            gap: 0.8rem;
+        }
+
+        /* ==================================================
+           UPCOMING COACHING / ANNOUNCEMENT BANNER
+           ================================================== */
+        .announcement-section {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .announcement-box {
+            background: linear-gradient(135deg, var(--color-green-dark), var(--color-green));
+            border-radius: 20px;
+            padding: 3.5rem;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--color-gold);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .announcement-box::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .announcement-badge {
+            background: var(--color-gold);
+            color: var(--color-green-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .announcement-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .announcement-content p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .feature-bullets i {
+            color: var(--color-gold);
+        }
+
+        .announcement-action {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .announcement-action h4 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-action p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ==================================================
+           IMPACT STORIES SECTION
+           ================================================== */
+        .impact {
+            background: #fff;
+            padding: 6rem 2rem;
+            border-top: 1px solid rgba(27, 94, 32, 0.05);
+        }
+
+        .impact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: var(--color-bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(27, 94, 32, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-image {
+            height: 220px;
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(18, 62, 21, 0.85);
+            color: var(--color-gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .story-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .story-content blockquote {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--color-green-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .story-author {
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+
+        }
+
+        .story-author span {
+            color: var(--color-gold);
+        }
+
+        /* ==================================================
+           CALL TO ACTION
+           ================================================== */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: var(--color-bg-light);
+            position: relative;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--color-green-dark);
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ==================================================
+           FOOTER
+           ================================================== */
+        .site-footer {
+            background: var(--color-green-dark);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            border-top: 3px solid var(--color-gold);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand .logo span {
+            color: var(--color-gold);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 380px;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h5 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--color-gold);
+        }
+
+        /* ==================================================
+           RESPONSIVE BREAKPOINTS
+           ================================================== */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 8rem;
+            }
+            .announcement-box {
+                grid-template-columns: 1fr;
+            }
+            .impact-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be expanded into mobile drawer */
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .slider-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================================================
+         NAVIGATION HEADER
+    ================================================== -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                HABLO<span>CLASS</span>
+                <span class="brand-badge">LAMPSTAND</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#updates">Scholarship Prep</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#join" class="btn-nav">Get Involved</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ==================================================
+         HERO SECTION
+    ================================================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">
+                <i class="fas fa-seedling"></i> A LAMPSTAND INITIATIVE
+            </span>
+            <h1 class="hero-title">
+                Speak. Connect. <span>Grow.</span>
+            </h1>
+            <p class="hero-description">
+                Empowerment through language mastery, communication skills, and technical knowledge. We build confidence and create pathways for young minds across Africa.
+            </p>
+            <div class="hero-actions">
+                <a href="#updates" class="btn-primary">
+                    Scholarship Coaching <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn-secondary">
+                    Discover Our Vision <i class="fas fa-compass"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dynamic Hero Image Slider -->
+        <div class="hero-slider-wrapper">
+            <div class="slider-container" id="heroSlider">
+                
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <img src="images/PXL_20231011_151755935.NIGHT.jpg" alt="Evening study group gathering in a circle around the blackboard">
+                    <div class="slide-caption">
+                        <h4>Collaborative Learning Circles</h4>
+                        <p>Night study sessions bringing youth together for structured peer learning.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="images/hero4.jpeg" alt="Interactive classroom discussion circle with active participation">
+                    <div class="slide-caption">
+                        <h4>Interactive Workshops</h4>
+                        <p>Safe spaces where every voice is heard and every question matters.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="images/PXL_20230913_065426585.PORTRAIT.jpg" alt="Young students standing together holding study materials outdoors">
+                    <div class="slide-caption">
+                        <h4>Rooted in Community</h4>
+                        <p>Supporting learners from primary foundations to higher education opportunities.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <img src="images/PXL_20230913_065457753.PORTRAIT.jpg" alt="Children holding The Value of Giving book">
+                    <div class="slide-caption">
+                        <h4>Values & Generosity</h4>
+                        <p>Building character, leadership, and mutual support beyond books.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevBtn" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         MISSION & HISTORY
+    ================================================== -->
+    <section class="mission" id="about">
+        <div class="mission-inner">
+            <span class="section-tag">Since 2023</span>
+            <h2>Nurturing Potential from Primary to University</h2>
+            <p class="mission-lead">
+                HabloClass was born out of a commitment to bridge academic and communication gaps for youth. From preparing candidates for Kepler University to coaching primary school finalists and Senior 3 examination students, we provide the tools to turn ambition into reality.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2023</h3>
+                    <p>Year Founded under Lampstand</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Community-Driven Focus</p>
+                </div>
+                <div class="stat-card">
+                    <h3>S3 & Primary</h3>
+                    <p>Exam & Scholarship Prep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         PROGRAMS & FOCUS AREAS
+    ================================================== -->
+    <section class="programs" id="programs">
+        <div class="section-header">
+            <span class="section-tag">What We Do</span>
+            <h2>Designed for Growth & Leadership</h2>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Scholarship Preparation</h3>
+                <p>Targeted coaching for competitive Student and university entries (e.g., Kepler) and secondary school scholarship applications.</p>
+                <a href="#updates" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-comments"></i></div>
+                <h3>Intermediate English & Fluency</h3>
+                <p>Interactive group circles focusing on practical, Education Coaching, English grammar, vocabulary, public speaking, and confidence.</p>
+                <a href="#join" class="program-link">Join a Circle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Digital & Technical Literacy</h3>
+                <p>Foundational computer skills, problem-solving, and technology basics tailored for youth entering modern studies.</p>
+                <a href="#join" class="program-link">View Workshops <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-book-open"></i></div>
+                <h3>National Exam Support</h3>
+                <p>Dedicated mentorship and revision sessions for Senior 3 candidates and primary school national exam takers.</p>
+                <a href="#updates" class="program-link">See Schedule <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         SCHOLARSHIP COACHING & UPDATES ANNOUNCEMENT
+    ================================================== -->
+    <section class="announcement-section" id="updates">
+        <div class="announcement-box">
+            <div class="announcement-content">
+                <span class="announcement-badge">Upcoming Coaching Program</span>
+                <h3>Community Scholarship & Exam Coaching Session</h3>
+                <p>
+                    We are launching our next intensive coaching series designed to help primary candidates, Senior 3 graduates, and university hopefuls unlock scholarship opportunities.
+                </p>
+                <ul class="feature-bullets">
+                    <li><i class="fas fa-check-circle"></i> Kepler University Application Support & Interview Prep</li>
+                    <li><i class="fas fa-check-circle"></i> Essay Writing & Personal Statement Guidance</li>
+                    <li><i class="fas fa-check-circle"></i> High-School National Exam Revision Groups</li>
+                </ul>
+            </div>
+
+            <div class="announcement-action">
+                <h4>Stay Updated</h4>
+                <p>Get notified as soon as session dates and registration details are published.</p>
+                <a href="#join" class="btn-primary" style="width: 100%; justify-content: center;">
+                    Register Interest
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         IMPACT STORIES
+    ================================================== -->
+    <section class="impact" id="impact">
+        <div class="impact-container">
+            <div class="section-header">
+                <span class="section-tag">Impact & Stories</span>
+                <h2>Real Voices, Real Growth</h2>
+            </div>
+
+            <div class="impact-grid">
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="images/PXL_20230913_065426585.PORTRAIT.jpg" alt="Primary students with books">
+                        <span class="story-tag">Primary Candidates</span>
+                    </div>
+                    <div class="story-content">
+                        <blockquote>"The study circles gave us confidence before our final national exams."</blockquote>
+                        <div class="story-author">Class of 2023 <span>• Primary Preparation</span></div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="images/senior3.jpg" alt="Primary students with books">
+                        <span class="story-tag">Senior 3 Focus</span>
+                    </div>
+                    <div class="story-content">
+                        <blockquote>"Night sessions with mentors helped untangle difficult topics in English and reasoning."</blockquote>
+                        <div class="story-author">S3 Study Group <span>• Exam Mentorship</span></div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="images/kepler.jpg" alt="Senior students in evening coaching">
+                       
+                        <span class="story-tag">Kepler Applicants</span>
+                    </div>
+                    <div class="story-content">
+                        <blockquote>"Practicing public speaking and application essays opened up university horizons for us."</blockquote>
+                        <div class="story-author">Kepler Candidates <span>• Higher Education</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         CALL TO ACTION
+    ================================================== -->
+    <section class="cta-section" id="join">
+        <div class="cta-content">
+            <h2>Ready to Speak, Connect, and Grow?</h2>
+            <p>Whether you are a student preparing for exams/scholarships or a mentor wishing to facilitate a workshop, there is a space for you in HabloClass.</p>
+            <a href="mailto:info@lampstand.org" class="btn-primary">
+                Get in Touch <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">HABLO<span>CLASS</span></a>
+                <p>An educational mentorship platform under the Lampstand project ecosystem. Dedicated to youth empowerment through language, technology, and learning support.</p>
+            </div>
+
+            <div class="footer-column">
+                <h5>Navigation</h5>
+                <ul class="footer-links">
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#updates">Scholarship Prep</a></li>
+                    <li><a href="#impact">Impact Stories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Lampstand Hub</h5>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Main Portfolio</a></li>
+                    <li><a href="../somewhere.html">Somewhere in Africa</a></li>
+                    <li><a href="../gallery/gallery.html">Visual Archive</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 HABLOCLASS | Lampstand Ecosystem. All Rights Reserved.</p>
+            <p>Designed with Green & Gold Identity</p>
+        </div>
+    </footer>
+
+    <!-- ==================================================
+         LIGHTWEIGHT JAVASCRIPT SLIDER
+    ================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('#heroSlider .slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function startAutoplay() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(slideInterval);
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', () => {
+                stopAutoplay();
+                nextSlide();
+                startAutoplay();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                stopAutoplay();
+                prevSlide();
+                startAutoplay();
+            });
+
+            // Start auto slide
+            startAutoplay();
+        });
+    </script>
+</body>
+
+</html>
