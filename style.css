@@ -1607,26 +1607,19 @@ header.scrolled .join-btn:hover {
     transition: 0.3s ease;
 }
 
- .about-header.menu-open
-    
-     .about-menu-toggle span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
 
 
-    /* .about-header.menu-open */
-    .about-menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
+.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
 
+.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
 
-    /* .about-header.menu-open */
-    .about-menu-toggle span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-   
-
-
+.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 /* ==========================
    TABLET
 =========================== */

@@ -14,57 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
        1. MOBILE NAVIGATION TOGGLE
     ========================================== */
     const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.querySelector('header nav');
+const navMenu = document.querySelector('header nav');
+const header = document.querySelector('.site-header');
 
- const header = document.querySelector(".site-header");
-     menuToggle.addEventListener('click', () => {
-    
-        // make nav-menu visible when menuToggle is clicked turigukora show and hide 
-        if (navMenu.classList.contains('active')) {
-            navMenu.style.visibility = 'visible';
-            navMenu.style.opacity = '1';
-        } else {
-            navMenu.style.visibility = 'hidden';
-            navMenu.style.opacity = '0';
-        }
+if (menuToggle && navMenu && header) {
 
+    menuToggle.addEventListener('click', () => {
+
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        header.classList.toggle('menu-open');
 
     });
 
-    if (menuToggle && navMenu) {
+    // Close menu when a navigation link is clicked
+    const navLinks = navMenu.querySelectorAll('a');
 
-         menuToggle.addEventListener("click", function () {
-
-            header.classList.toggle("menu-open");
-
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            header.classList.remove('menu-open');
         });
+    });
 
-
-        console.log('Menu toggle and navigation menu found. Setting up event listeners.');
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-
-            console.log(`Menu toggle clicked. Active state: ${menuToggle.classList.contains('active')}`);
-            console.log(`Navigation menu active state: ${navMenu.classList.contains('active')}`);
-        });
-
-        // Close navigation menu when a link is clicked
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // menuToggle.classList.remove('active');
-                // navMenu.classList.remove('active');
-
-            //     navMenu.style.visibility = 'hidden';
-            // navMenu.style.opacity = '0';
-            });
-        });
-
-
-     
-    }
-
+}
 
     /* ==========================================
        2. HERO SLIDER AUTOMATION & MANUAL DOTS
