@@ -884,9 +884,9 @@ a {
 
     padding: 30px 20px 0;
 
-    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    border-top: 1px solid rgba(230, 213, 30, 0.692);
 
-    color: #e9e4d2 !important;
+    /* color: #e9e4d2 !important; */
 
     font-family: 'Fraunces', Georgia, serif;
 
@@ -902,7 +902,6 @@ a {
 
 .about-closing {
     padding: 110px 8%;
-
     background: white;
 
     text-align: center;
